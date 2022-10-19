@@ -5,3 +5,4 @@ flask_sqlalchemy
 flask_migrate
 python-dotenv
 flask-login
+email_validator
