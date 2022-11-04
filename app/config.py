@@ -6,6 +6,10 @@ class Config:
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
                               'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    POSTS_PER_PAGE = 10
+    ADMINS = ['asdf@gmail.com']
+    LANGUAGES = ['en', 'es']
+
 
     # FLASK_ENV = 'development'
     # FLASK_APP = 'microblog'

@@ -1,13 +1,4 @@
-2022-10-18 21:51:37,351 ERROR: Exception on /edit_profile [POST] [in /Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/flask/app.py:1741]
-Traceback (most recent call last):
-  File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
-    self.dialect.do_execute(
-  File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.IntegrityError: UNIQUE constraint failed: user.username
-
-The above exception was the direct cause of the following exception:
-
+2022-10-26 21:18:37,009 ERROR: Exception on /user/mem4 [GET] [in /Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
   File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
@@ -19,53 +10,16 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
   File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/flask_login/utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/vlitvi/PycharmProjects/Flask/app/routes.py", line 90, in edit_profile
-    db.session.commit()
-  File "<string>", line 2, in commit
-  File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1451, in commit
-    self._transaction.commit(_to_root=self.future)
-  File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 829, in commit
-    self._prepare_impl()
-  File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
-    self.session.flush()
-  File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3386, in flush
-    self._flush(objects)
-  File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3526, in _flush
-    transaction.rollback(_capture_exception=True)
-  File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
-    compat.raise_(
-  File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 208, in raise_
-    raise exception
-  File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3486, in _flush
-    flush_context.execute()
-  File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
-    rec.execute(self)
-  File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 630, in execute
-    util.preloaded.orm_persistence.save_obj(
-  File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 237, in save_obj
-    _emit_update_statements(
-  File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 1001, in _emit_update_statements
-    c = connection._execute_20(
-  File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1705, in _execute_20
-    return meth(self, args_10style, kwargs_10style, execution_options)
-  File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 333, in _execute_on_connection
-    return connection._execute_clauseelement(
-  File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1572, in _execute_clauseelement
-    ret = self._execute_context(
-  File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1943, in _execute_context
-    self._handle_dbapi_exception(
-  File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2124, in _handle_dbapi_exception
-    util.raise_(
-  File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 208, in raise_
-    raise exception
-  File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
-    self.dialect.do_execute(
-  File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username
-[SQL: UPDATE user SET username=?, about_me=? WHERE user.id = ?]
-[parameters: ('mem5', '', 2)]
-(Background on this error at: https://sqlalche.me/e/14/gkpj)
-2022-10-19 20:53:02,919 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:29]
-2022-10-19 20:53:44,604 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:29]
-2022-10-19 22:10:26,494 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:29]
+  File "/Users/vlitvi/PycharmProjects/Flask/app/routes.py", line 87, in user
+    page=page, per_page=app.config['POSTS_PER_PAGE'], error_out=False)
+NameError: name 'app' is not defined
+2022-10-26 21:41:25,872 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:29]
+2022-10-26 21:43:58,773 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:32]
+2022-10-26 21:48:10,142 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:32]
+2022-10-26 22:01:28,681 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:32]
+2022-11-04 19:57:22,937 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:35]
+2022-11-04 19:57:50,569 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:35]
+2022-11-04 19:58:20,742 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:35]
+2022-11-04 19:58:53,955 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:35]
+2022-11-04 19:59:47,731 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:35]
+2022-11-04 20:00:14,162 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:35]
