@@ -6,12 +6,15 @@ from app.models import User, Post
 from flask_login import login_required
 from werkzeug.urls import url_parse
 from datetime import datetime
+from flask import g
+from flask_babel import get_locale
 
 @application.before_request
 def before_request():
     if current_user.is_authenticated:
         current_user.last_seen = datetime.utcnow()
         db.session.commit()
+    g.locale = str(get_locale())
 
 
 @application.route('/', methods=['GET', 'POST'])

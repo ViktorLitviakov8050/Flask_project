@@ -8,7 +8,7 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     POSTS_PER_PAGE = 10
     ADMINS = ['asdf@gmail.com']
-    LANGUAGES = ['en', 'es']
+    LANGUAGES = ['en', 'uk']
 
 
     # FLASK_ENV = 'development'

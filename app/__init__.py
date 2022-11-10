@@ -44,6 +44,8 @@ if not application.debug:
 
 @babel.localeselector
 def get_locale():
-    return request.accept_languages.best_match(application.config['LANGUAGES'])
+    # return request.accept_languages.best_match(application.config['LANGUAGES'])
+    return 'uk'
+
 
 
