@@ -11,3 +11,5 @@ pyjwt
 flask-bootstrap
 flask-moment
 flask-babel
+langdetect
+requests

@@ -1,5 +1,5 @@
 from app import application, db
-from flask import render_template, flash, redirect, url_for, request
+from flask import render_template, flash, redirect, url_for, request, jsonify
 from app.forms import LoginForm, RegistrationForm, EditProfileForm, EmptyForm, PostForm
 from flask_login import current_user, login_user, logout_user
 from app.models import User, Post
@@ -8,6 +8,8 @@ from werkzeug.urls import url_parse
 from datetime import datetime
 from flask import g
 from flask_babel import get_locale
+from langdetect import detect, LangDetectException
+from app import quote
 
 @application.before_request
 def before_request():
@@ -23,7 +25,11 @@ def before_request():
 def index():
     form = PostForm()
     if form.validate_on_submit():
-        post = Post(body=form.post.data, author=current_user)
+        try:
+            language = detect(form.post.data)
+        except LangDetectException:
+            language = ''
+        post = Post(body=form.post.data, author=current_user, language=language)
         db.session.add(post)
         db.session.commit()
         flash('Your post is now live!')
@@ -165,3 +171,9 @@ def explore():
         if posts.has_prev else None
     return render_template("index.html", title='Explore', posts=posts.items,
                            next_url=next_url, prev_url=prev_url)
+
+
+@application.route('/get_quote', methods=['GET'])
+@login_required
+def get_quote():
+    return jsonify({'quote': quote.get_quote()})
