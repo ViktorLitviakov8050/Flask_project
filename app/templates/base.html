@@ -3,10 +3,24 @@
 {% block title %}
     {% if title %}{{ title }} - Microblog{% else %}Welcome to Microblog{% endif %}
 {% endblock %}
+{%- block head %}
+    {{ super() }}
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
+{%- endblock head %}
 {% block scripts %}
     {{ super() }}
     {{ moment.include_moment() }}
     {{ moment.lang(g.locale) }}
+    <script>
+            function get_quote(destElem) {
+                $(destElem).html('<img src="{{ url_for('static', filename='loading.gif') }}">');
+                $.get('/get_quote').done(function(response) {
+                    $(destElem).text(response['quote'])
+                }).fail(function(error) {
+                    $(destElem).text(error);
+                });
+            }
+    </script>
 {% endblock %}
 {% block navbar %}
     <nav class="navbar navbar-default">
@@ -52,3 +66,5 @@
         {% block app_content %}{% endblock %}
     </div>
 {% endblock %}
+
+
