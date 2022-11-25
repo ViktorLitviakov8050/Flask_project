@@ -1,7 +1,7 @@
-import json
+# import json
 import requests
 from flask_babel import _
-from app import application
+# from app import application
 
 def get_quote():
     r = requests.get('https://zenquotes.io/api/random')
