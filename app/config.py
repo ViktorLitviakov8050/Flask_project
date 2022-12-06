@@ -12,7 +12,7 @@ class Config:
     POSTS_PER_PAGE = 10
     ADMINS = ['asdf@gmail.com']
     LANGUAGES = ['en', 'uk']
-
+    OPENSEARCH_URL = os.environ.get('OPENSEARCH_URL')
 
     # FLASK_ENV = 'development'
     # FLASK_APP = 'microblog'

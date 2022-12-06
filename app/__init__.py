@@ -11,7 +11,7 @@ from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from flask_babel import Babel
 from flask_babel import lazy_gettext as _l
-
+from opensearchpy import OpenSearch
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -33,6 +33,8 @@ from app import models
 def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(config_class)
+    app.opensearch = OpenSearch([app.config['OPENSEARCH_URL']]) \
+        if app.config['OPENSEARCH_URL'] else None
 
     db.init_app(app)
     migrate.init_app(app, db)
