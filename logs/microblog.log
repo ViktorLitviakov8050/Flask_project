@@ -42,3 +42,4 @@ NameError: name 'app' is not defined
 2022-11-23 19:58:52,655 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:64]
 2022-11-23 19:58:52,655 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:64]
 2022-12-06 21:09:48,000 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:64]
+2022-12-07 20:00:42,433 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:66]
