@@ -14,3 +14,4 @@ flask-babel
 langdetect
 requests
 opensearch-py
+rq

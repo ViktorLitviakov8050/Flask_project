@@ -71,3 +71,18 @@ Traceback (most recent call last):
   File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/opensearchpy/connection/http_urllib3.py", line 255, in perform_request
     raise ConnectionError("N/A", str(e), e)
 opensearchpy.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x10c4355e0>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x10c4355e0>: Failed to establish a new connection: [Errno 61] Connection refused)
+2022-12-21 21:34:51,062 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:66]
+2022-12-21 21:34:58,903 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:66]
+2022-12-26 19:50:39,947 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:66]
+2022-12-26 19:50:53,839 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:66]
+2022-12-27 22:04:25,257 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
+2022-12-27 22:08:31,007 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
+2022-12-27 22:09:36,386 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
+2022-12-27 22:09:36,386 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
+2022-12-27 22:16:53,772 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
+2022-12-27 22:16:53,772 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
+2022-12-27 22:16:53,772 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
+2022-12-27 22:20:04,656 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
+2022-12-27 22:20:51,061 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
+2022-12-27 22:20:51,061 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
+2022-12-27 22:22:29,268 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
