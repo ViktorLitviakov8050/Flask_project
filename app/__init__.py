@@ -12,6 +12,8 @@ from flask_moment import Moment
 from flask_babel import Babel
 from flask_babel import lazy_gettext as _l
 from opensearchpy import OpenSearch
+from redis import Redis
+import rq
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -43,11 +45,18 @@ def create_app(config_class=Config):
     bootstrap.init_app(app)
     moment.init_app(app)
     babel.init_app(app)
+    app.redis = Redis.from_url(app.config['REDIS_URL'])
+    app.task_queue = rq.Queue('microblog-tasks', connection=app.redis)
+    dir_ = app.config['POSTS_JSON_DIR']
+    if not os.path.exists(dir_):
+        os.mkdir(dir_)
 
     from app.errors import errors_blueprint
     from app.auth import auth_blueprint
     from app.main import main_blueprint
+    from app.api import bp as api_bp
 
+    app.register_blueprint(api_bp, url_prefix='/api')
     app.register_blueprint(errors_blueprint)
     app.register_blueprint(auth_blueprint, url_prefix='/auth')
     app.register_blueprint(main_blueprint)

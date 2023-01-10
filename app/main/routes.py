@@ -1,5 +1,5 @@
 from app import db
-from flask import render_template, flash, redirect, url_for, request, jsonify, current_app
+from flask import render_template, flash, redirect, url_for, request, jsonify, current_app, send_file
 from app.main.forms import EditProfileForm, EmptyForm, PostForm
 from flask_login import current_user
 from app.models import User, Post
@@ -12,7 +12,7 @@ from app import quote
 from app.main import main_blueprint
 from app.main.forms import SearchForm, MessageForm
 from app.models import Message, Notification
-
+import os
 
 @main_blueprint.before_app_request
 def before_request():
@@ -213,3 +213,25 @@ def notifications():
         'data': notific.get_data(),
         'timestamp': notific.timestamp
     } for notific in notifications])
+
+
+@main_blueprint.route('/export_posts')
+@login_required
+def export_posts():
+    if current_user.get_task_in_progress('export_posts'):
+        flash(_('An export task is currently in progress'))
+    else:
+        current_user.launch_task('export_posts', _('Exporting posts...'))
+        db.session.commit()
+        return redirect(url_for('main.user', username=current_user.username))
+
+
+@main_blueprint.route('/get_posts')
+@login_required
+def get_posts():
+    try:
+        filename = current_user.get_posts_filename()
+        return send_file(os.path.join('..', filename), as_attachment=True)
+    except:
+        flash('Please, export your posts first')
+        return redirect(url_for('main.user', username=current_user.username))
