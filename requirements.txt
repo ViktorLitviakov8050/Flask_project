@@ -15,3 +15,5 @@ langdetect
 requests
 opensearch-py
 rq
+httpie
+flask-httpauth

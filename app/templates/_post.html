@@ -17,7 +17,7 @@
             username=user_link) }}
                 <span class="pull-right"> {{ moment(post.timestamp).format('LLL') }} </span>
                 <br>
-                {{ post.body }}
+                {{ post.body | safe }}
             </td>
                 <tr>
                 <td>

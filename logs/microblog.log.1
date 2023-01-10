@@ -1,4 +1,4 @@
-2022-12-14 21:31:22,564 ERROR: Exception on /search [GET] [in /Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/flask/app.py:1741]
+2022-12-14 21:31:32,719 ERROR: Exception on /search [GET] [in /Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
   File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/urllib3/connection.py", line 174, in _new_conn
     conn = connection.create_connection(
@@ -39,7 +39,7 @@ Traceback (most recent call last):
     conn = self._new_conn()
   File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/urllib3/connection.py", line 186, in _new_conn
     raise NewConnectionError(
-urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10e5f25e0>: Failed to establish a new connection: [Errno 61] Connection refused
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10c4355e0>: Failed to establish a new connection: [Errno 61] Connection refused
 
 During handling of the above exception, another exception occurred:
 
@@ -70,5 +70,54 @@ Traceback (most recent call last):
     status, headers_response, data = connection.perform_request(
   File "/Users/vlitvi/PycharmProjects/Flask/venv/lib/python3.8/site-packages/opensearchpy/connection/http_urllib3.py", line 255, in perform_request
     raise ConnectionError("N/A", str(e), e)
-opensearchpy.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x10e5f25e0>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x10e5f25e0>: Failed to establish a new connection: [Errno 61] Connection refused)
-2022-12-14 21:31:30,753 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:66]
+opensearchpy.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x10c4355e0>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x10c4355e0>: Failed to establish a new connection: [Errno 61] Connection refused)
+2022-12-21 21:34:51,062 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:66]
+2022-12-21 21:34:58,903 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:66]
+2022-12-26 19:50:39,947 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:66]
+2022-12-26 19:50:53,839 INFO: Microblog startup [in /Users/vlitvi/PycharmProjects/Flask/app/__init__.py:66]
+2022-12-27 22:04:25,257 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
+2022-12-27 22:08:31,007 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
+2022-12-27 22:09:36,386 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
+2022-12-27 22:09:36,386 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
+2022-12-27 22:16:53,772 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
+2022-12-27 22:16:53,772 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
+2022-12-27 22:16:53,772 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
+2022-12-27 22:20:04,656 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
+2022-12-27 22:20:51,061 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
+2022-12-27 22:20:51,061 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
+2022-12-27 22:22:29,268 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
+2022-12-28 18:15:01,184 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
+2022-12-28 18:15:11,332 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
+2022-12-28 19:26:34,142 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
+2022-12-28 19:26:48,107 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:66]
+2022-12-28 21:03:29,816 INFO: Microblog startup [in ./app/__init__.py:70]
+2022-12-28 21:03:29,819 ERROR: Unhandled exception [in ./app/tasks.py:38]
+Traceback (most recent call last):
+  File "./app/tasks.py", line 26, in export_posts
+    user = User.query.get(user_id)
+NameError: name 'User' is not defined
+2022-12-28 21:03:53,048 INFO: Microblog startup [in ./app/__init__.py:70]
+2022-12-28 21:03:53,052 ERROR: Unhandled exception [in ./app/tasks.py:38]
+Traceback (most recent call last):
+  File "./app/tasks.py", line 26, in export_posts
+    user = User.query.get(user_id)
+NameError: name 'User' is not defined
+2022-12-28 21:06:33,269 INFO: Microblog startup [in ./app/__init__.py:70]
+2022-12-28 21:06:33,334 ERROR: Unhandled exception [in ./app/tasks.py:38]
+Traceback (most recent call last):
+  File "./app/tasks.py", line 31, in export_posts
+    for post in user.posts.order_by(Post.timestamp.asc()):
+NameError: name 'Post' is not defined
+2022-12-28 21:07:09,379 INFO: Microblog startup [in ./app/__init__.py:70]
+2022-12-28 21:07:09,448 ERROR: Unhandled exception [in ./app/tasks.py:38]
+Traceback (most recent call last):
+  File "./app/tasks.py", line 34, in export_posts
+    time.sleep(5)
+NameError: name 'time' is not defined
+2022-12-28 21:07:46,379 INFO: Microblog startup [in ./app/__init__.py:70]
+2022-12-28 21:10:18,801 INFO: Microblog startup [in ./app/__init__.py:70]
+2022-12-28 21:10:47,769 INFO: Microblog startup [in ./app/__init__.py:70]
+2022-12-28 21:40:27,272 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:74]
+2022-12-28 21:44:42,120 INFO: Microblog startup [in ./app/__init__.py:74]
+2023-01-04 21:09:03,129 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:75]
+2023-01-06 18:54:12,241 INFO: Microblog startup [in /Users/makariy/PycharmProjects/Flask_project/app/__init__.py:75]

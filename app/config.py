@@ -13,6 +13,8 @@ class Config:
     ADMINS = ['asdf@gmail.com']
     LANGUAGES = ['en', 'uk']
     OPENSEARCH_URL = os.environ.get('OPENSEARCH_URL')
+    REDIS_URL = os.environ.get('REDIS_URL') or 'redis://'
+    POSTS_JSON_DIR = os.path.join('app', 'posts_json')
 
     # FLASK_ENV = 'development'
     # FLASK_APP = 'microblog'
