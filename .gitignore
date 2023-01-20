@@ -7,3 +7,5 @@ __pycache__/
 .flaskenv
 .env
 logs/
+app/app.db
+requirements.txt

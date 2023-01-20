@@ -10,7 +10,7 @@ flask-mail
 pyjwt
 flask-bootstrap
 flask-moment
-flask-babel
+flask-babel<3
 langdetect
 requests
 opensearch-py

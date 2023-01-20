@@ -1,12 +1,10 @@
 from flask import make_response, jsonify
 from app.api import bp
-from flask import jsonify
-from werkzeug.http import HTTP_STATUS_CODES
-
+import werkzeug.http 
 
 
 def error_response(status_code, message=None):
-    payload = {'error': HTTP_STATUS_CODES.get(status_code, 'Unknown error')}
+    payload = {'error': werkzeug.http.HTTP_STATUS_CODES.get(status_code, 'Unknown error')}
     if message:
         payload['message'] = message
     response = jsonify(payload)

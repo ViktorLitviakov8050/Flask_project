@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from app.config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -14,6 +14,7 @@ from flask_babel import lazy_gettext as _l
 from opensearchpy import OpenSearch
 from redis import Redis
 import rq
+
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -81,8 +82,9 @@ def create_app(config_class=Config):
 
 @babel.localeselector
 def get_locale():
-    # return request.accept_languages.best_match(application.config['LANGUAGES'])
-    return "uk"
+    application = create_app()
+    return request.accept_languages.best_match(application.config['LANGUAGES'])
+    # return "uk"
 
 
 
