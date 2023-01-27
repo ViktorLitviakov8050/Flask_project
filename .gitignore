@@ -8,4 +8,4 @@ __pycache__/
 .env
 logs/
 app/app.db
-requirements.txt
+dump.rdb
