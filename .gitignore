@@ -9,3 +9,4 @@ __pycache__/
 logs/
 app/app.db
 dump.rdb
+app/posts_json/
