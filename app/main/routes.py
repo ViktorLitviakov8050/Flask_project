@@ -215,6 +215,15 @@ def notifications():
     } for notific in notifications])
 
 
+@main_blueprint.route("/count")
+def count():
+    if current_user.get_task_in_progress('count'):
+        flash(_('An count task is currently in progress'))
+    else:
+        current_user.launch_task('count', 'Counting')
+        db.session.commit()
+    return redirect(url_for('main.user', username=current_user.username))
+
 @main_blueprint.route('/export_posts')
 @login_required
 def export_posts():
