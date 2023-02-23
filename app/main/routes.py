@@ -223,7 +223,7 @@ def export_posts():
     else:
         current_user.launch_task('export_posts', _('Exporting posts...'))
         db.session.commit()
-        return redirect(url_for('main.user', username=current_user.username))
+    return redirect(url_for('main.user', username=current_user.username))
 
 
 @main_blueprint.route('/get_posts')
@@ -232,6 +232,6 @@ def get_posts():
     try:
         filename = current_user.get_posts_filename()
         return send_file(os.path.join('..', filename), as_attachment=True)
-    except:
+    except FileNotFoundError:
         flash('Please, export your posts first')
         return redirect(url_for('main.user', username=current_user.username))

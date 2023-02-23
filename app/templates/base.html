@@ -86,9 +86,12 @@
             {% with tasks = current_user.get_tasks_in_progress() %}
             {% if tasks %}
                 {% for task in tasks %}
-                    <div class="alert alert-success" role="alert">
+                    <div id="{{ task.id }}-info" class="alert alert-success" role="alert">
                         {{ task.description }}
-                    <span id="{{ task.id }}-progress">{{ task.get_progress() }}</span>%
+                        <span id="{{ task.id }}-progress">{{ task.get_progress() }}</span>%
+                        <span style="margin: 1%">
+                            <progress id="{{ task.id }}-progress-bar" value="{{ task.get_progress() }}" max="100"></progress>
+                        </span>
                     </div>
                 {% endfor %}
             {% endif %}
