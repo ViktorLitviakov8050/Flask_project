@@ -9,7 +9,6 @@ $(function() {
             function(notifications) {
                 for (var i = 0; i < notifications.length; i++) {
                         if (notifications[i].name === 'unread_message_count') {
-                            console.log('umc');
                             set_message_count(notifications[i].data);
                         }
                         else if (notifications[i].name.includes('task_progress')) {
