@@ -29,13 +29,6 @@
                 </a>
             </p>
         {% endif %}
-        {% if not current_user.get_task_in_progress('count') %}
-            <p>
-                <a href="{{ url_for('main.count') }}">
-                    {{ _('Count') }}
-                </a>
-            </p>
-        {% endif %}
 
     {% elif not current_user.is_following(user) %}
         <p>

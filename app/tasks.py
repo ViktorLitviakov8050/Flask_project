@@ -23,18 +23,6 @@ def _set_task_progress(progress):
             task.complete = True
         db.session.commit()
 
-def count(user_id):
-    _set_task_progress(0)
-    i = 0
-    POSTS_TOTAL = 10_000
-    while True:
-        i += 1
-        _set_task_progress(100 * i // POSTS_TOTAL)
-        if i == POSTS_TOTAL:
-            _set_task_progress(100)
-            break
-    print("i = 10_000")
-        
 
 def export_posts(user_id):
     try:
