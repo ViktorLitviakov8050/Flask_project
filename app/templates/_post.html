@@ -17,7 +17,11 @@
             username=user_link) }}
                 <span class="pull-right"> {{ moment(post.timestamp).format('LLL') }} </span>
                 <br>
-                {{ post.body | safe }}
+                {% if post.author.is_admin() %}
+                    {{ post.body | safe }}
+                {% else %}
+                    {{ post.body }}
+                {% endif %}
             </td>
                 <tr>
                 <td>

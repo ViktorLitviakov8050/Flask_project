@@ -8,7 +8,7 @@ def send_message(recipient):
     with current_app.app_context(), current_app.test_request_context():
         posts_url = url_for('main.get_posts')
     msg = Message(author=admin, recipient=user,
-                    body=f'<p>Your post were successfully exported. <a href={posts_url}>Click to download file</a>')
+                    body=f'<p>Your posts were successfully exported. <a href={posts_url}>Click to download file</a>')
     db.session.add(msg)
     user.add_notification('unread_message_count', user.new_messages_count())
     db.session.commit()

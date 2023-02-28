@@ -215,6 +215,15 @@ def notifications():
     } for notific in notifications])
 
 
+@main_blueprint.route("/count")
+def count():
+    if current_user.get_task_in_progress('count'):
+        flash(_('An count task is currently in progress'))
+    else:
+        current_user.launch_task('count', 'Counting')
+        db.session.commit()
+    return redirect(url_for('main.user', username=current_user.username))
+
 @main_blueprint.route('/export_posts')
 @login_required
 def export_posts():
@@ -223,7 +232,7 @@ def export_posts():
     else:
         current_user.launch_task('export_posts', _('Exporting posts...'))
         db.session.commit()
-        return redirect(url_for('main.user', username=current_user.username))
+    return redirect(url_for('main.user', username=current_user.username))
 
 
 @main_blueprint.route('/get_posts')
@@ -232,6 +241,6 @@ def get_posts():
     try:
         filename = current_user.get_posts_filename()
         return send_file(os.path.join('..', filename), as_attachment=True)
-    except:
+    except FileNotFoundError:
         flash('Please, export your posts first')
         return redirect(url_for('main.user', username=current_user.username))

@@ -5,4 +5,5 @@ function set_message_count(n) {
 
 function set_task_progress(task_id, progress) {
     $('#' + task_id + '-progress').text(progress);
+    $('#' + task_id + '-progress-bar').val(progress);
 }
