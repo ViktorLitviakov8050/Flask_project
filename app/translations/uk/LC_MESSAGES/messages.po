@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-11-07 21:00+0000\n"
+"POT-Creation-Date: 2023-02-26 17:40+0200\n"
 "PO-Revision-Date: 2022-11-07 19:54+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uk\n"
@@ -21,72 +21,170 @@ msgstr ""
 
 #: app/__init__.py:27
 msgid "Please log in to access this page."
-msgstr "Будь-ласка зареєструйся щоб увійти на сторінку"
+msgstr "Будь ласка, увійдіть, щоб зайти на сторінку"
 
-#: app/forms.py:9 app/forms.py:16 app/forms.py:35
+#: app/quote.py:9
+msgid "Quote service errrorrr"
+msgstr "Помилка отримання цитати"
+
+#: app/auth/forms.py:9 app/auth/forms.py:16 app/main/forms.py:9
 msgid "Username"
 msgstr "Імʼя користувача"
 
-#: app/forms.py:10 app/forms.py:18
+#: app/auth/forms.py:10 app/auth/forms.py:18
 msgid "Password"
 msgstr "Пароль"
 
-#: app/forms.py:11
+#: app/auth/forms.py:11
 msgid "Remember Me"
-msgstr "Запомʼятай мене"
+msgstr "Запамʼятати мене"
 
-#: app/forms.py:12
+#: app/auth/forms.py:12
 msgid "Sign In"
-msgstr "Увійти"
+msgstr "Вхід"
 
-#: app/forms.py:17
+#: app/auth/forms.py:17
 msgid "Email"
-msgstr "Імейл"
+msgstr "Електронна пошта"
 
-#: app/forms.py:20
+#: app/auth/forms.py:20
 msgid "Repeat Password"
-msgstr "Потвторіть пароль"
+msgstr "Повторіть пароль"
 
-#: app/forms.py:21
+#: app/auth/forms.py:21
 msgid "Register"
 msgstr "Реєстрація"
 
-#: app/forms.py:26 app/forms.py:47
+#: app/auth/forms.py:26 app/main/forms.py:21
 msgid "Please use a different username."
-msgstr "Будь-ласка використовуй інше імʼя"
+msgstr "Будь ласка, використайте інше імʼя користувача"
 
-#: app/forms.py:31
+#: app/auth/forms.py:31
 msgid "Please use a different email address."
-msgstr "Будь-ласка використовуй інший імейл"
+msgstr "Будь ласка, використайте іншу адресу електроннної пошти"
 
-#: app/forms.py:36
+#: app/main/forms.py:10
 msgid "About me"
 msgstr "Про мене"
 
-#: app/forms.py:37 app/forms.py:50 app/forms.py:55
+#: app/main/forms.py:11 app/main/forms.py:25 app/main/forms.py:31
+#: app/main/forms.py:48
 msgid "Submit"
-msgstr "Впевнений?"
+msgstr "Надіслати"
 
-#: app/forms.py:53
+#: app/main/forms.py:29
 msgid "Say something"
-msgstr "Кажить щось"
+msgstr "Скажіть щось"
 
-#: app/templates/404.html:4
-msgid "File Not Found"
-msgstr "Файл не знайдено"
+#: app/main/forms.py:35 app/main/routes.py:157
+msgid "Search"
+msgstr "Шукати"
 
-#: app/templates/_post.html:14
+#: app/main/forms.py:46
+msgid "Message"
+msgstr "Повідомлення"
+
+#: app/main/routes.py:180
+msgid "Your message has been sent."
+msgstr "Ваше повідомлення було надіслане"
+
+#: app/main/routes.py:182
+msgid "Send Message"
+msgstr "Надіслати повідомлення"
+
+#: app/main/routes.py:221
+msgid "An count task is currently in progress"
+msgstr ""
+
+#: app/main/routes.py:231
+msgid "An export task is currently in progress"
+msgstr "Експортування постів уже виконується"
+
+#: app/main/routes.py:233
+msgid "Exporting posts..."
+msgstr "Експортування постів..."
+
+#: app/templates/_post.html:16
 #, python-format
 msgid "%(username)s said"
-msgstr "%(username)s написав"
+msgstr "%(username)s пише"
 
 #: app/templates/_post.html:30
-#, python-format
-msgid "%(username)s said %(when)s"
-msgstr "%(username)s написав о %(when)s"
+msgid "Quote for post"
+msgstr "Цитата для допису"
+
+#: app/templates/base.html:65 app/templates/messages.html:4
+msgid "Messages"
+msgstr "Повідомлення"
 
 #: app/templates/index.html:5
 #, python-format
 msgid "Hi, %(username)s!"
-msgstr "Привіт %(username)s!"
+msgstr "Привіт, %(username)s!"
+
+#: app/templates/messages.html:12
+msgid "Newer messages"
+msgstr "Новіші повідомлення"
+
+#: app/templates/messages.html:17
+msgid "Older messages"
+msgstr "Старіші повідомлення"
+
+#: app/templates/search.html:4
+msgid "Search Results"
+msgstr "Результати пошуку"
+
+#: app/templates/search.html:13
+msgid "Previous results"
+msgstr "Попередні результати"
+
+#: app/templates/search.html:18
+msgid "Next results"
+msgstr "Наступні результати"
+
+#: app/templates/send_message.html:5
+#, python-format
+msgid "Send Message to %(recipient)s"
+msgstr "Надіслати повідомлення користувачу %(recipient)s"
+
+#: app/templates/user.html:28
+msgid "Export your posts"
+msgstr "Експортувати пости"
+
+#: app/templates/user.html:35
+msgid "Count"
+msgstr ""
+
+#: app/templates/user.html:59
+msgid "Send private message"
+msgstr "Надіслати особисте повідомлення"
+
+#: app/templates/user_popup.html:11
+msgid "Last seen on"
+msgstr "Останній вхід на сайт"
+
+#: app/templates/user_popup.html:14
+#, python-format
+msgid "%(count)d followers"
+msgstr "%(count)d підписників"
+
+#: app/templates/user_popup.html:15
+#, python-format
+msgid "%(count)d following"
+msgstr "%(count)d підписок"
+
+#: app/templates/user_popup.html:23
+msgid "Follow"
+msgstr "Підписатися"
+
+#: app/templates/user_popup.html:32
+msgid "Unfollow"
+msgstr "Відписатися"
+
+#: app/templates/errors/404.html:4
+msgid "File Not Found"
+msgstr "Сторінку не знайдено"
+
+#~ msgid "%(username)s said %(when)s"
+#~ msgstr "%(username)s написав о %(when)s"
 
